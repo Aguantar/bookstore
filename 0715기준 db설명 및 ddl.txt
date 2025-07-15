@@ -19,7 +19,6 @@ CREATE TABLE users (
   email    VARCHAR2(100 CHAR) NOT NULL,
   hp       VARCHAR2(20 CHAR),
   role     VARCHAR2(10 CHAR)  DEFAULT 'CUSTOMER' NOT NULL,
-
   CONSTRAINT pk_users       PRIMARY KEY (id),
   CONSTRAINT uk_users_un    UNIQUE (name),
   CONSTRAINT uk_users_email UNIQUE (email),
@@ -48,7 +47,6 @@ CREATE TABLE books (
   price       NUMBER(10,2)       NOT NULL,
   stock       NUMBER(10)         DEFAULT 0 NOT NULL,
   cover_image VARCHAR2(300 CHAR),
-
   CONSTRAINT pk_books         PRIMARY KEY (book_id),
   CONSTRAINT chk_books_price CHECK (price >= 0),
   CONSTRAINT chk_books_stock CHECK (stock >= 0)
@@ -70,7 +68,6 @@ CREATE SEQUENCE seq_carts START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 CREATE TABLE carts (
   cart_id NUMBER NOT NULL,
   user_id NUMBER NOT NULL,
-
   CONSTRAINT pk_carts          PRIMARY KEY (cart_id),
   CONSTRAINT fk_carts_user    FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -93,7 +90,6 @@ CREATE TABLE cart_items (
   cart_id      NUMBER        NOT NULL,
   book_id      NUMBER        NOT NULL,
   quantity     NUMBER(8)     DEFAULT 1 NOT NULL,
-
   CONSTRAINT pk_cart_items      PRIMARY KEY (cart_item_id),
   CONSTRAINT fk_cart_items_cart FOREIGN KEY (cart_id) REFERENCES carts(cart_id),
   CONSTRAINT fk_cart_items_book FOREIGN KEY (book_id) REFERENCES books(book_id),
@@ -118,7 +114,6 @@ CREATE TABLE orders (
   user_id      NUMBER       NOT NULL,
   status       VARCHAR2(20 CHAR) DEFAULT 'PENDING' NOT NULL,
   total_amount NUMBER(12,2) NOT NULL,
-
   CONSTRAINT pk_orders          PRIMARY KEY (order_id),
   CONSTRAINT fk_orders_user     FOREIGN KEY (user_id) REFERENCES users(id),
   CONSTRAINT chk_orders_status  CHECK (status IN ('PENDING','PAID','SHIPPED','DELIVERED','CANCELLED')),
@@ -144,7 +139,6 @@ CREATE TABLE order_items (
   book_id       NUMBER       NOT NULL,
   quantity      NUMBER(8)    DEFAULT 1 NOT NULL,
   unit_price    NUMBER(12,2) NOT NULL,
-
   CONSTRAINT pk_order_items       PRIMARY KEY (order_item_id),
   CONSTRAINT fk_order_items_order FOREIGN KEY (order_id) REFERENCES orders(order_id),
   CONSTRAINT fk_order_items_book  FOREIGN KEY (book_id) REFERENCES books(book_id),
