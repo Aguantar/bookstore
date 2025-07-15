@@ -94,8 +94,9 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 </servlet>
   <servlet-mapping>
   <servlet-name>booklist-dispatcher</servlet-name>
-  <url-pattern>/bookList/*</url-pattern>
+  <url-pattern>/bookList</url-pattern>
 </servlet-mapping>
+
 <servlet>
   <servlet-name>bookdetail-dispatcher</servlet-name>
   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -105,6 +106,20 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
   </init-param>
   <load-on-startup>4</load-on-startup>
 </servlet>
+<servlet>
+    <servlet-name>adminuser</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/config/adminuser-servlet.xml</param-value>
+    </init-param>
+    <load-on-startup>5</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>adminuser</servlet-name>
+    <url-pattern>/admin/*</url-pattern>
+</servlet-mapping>
 
 <servlet-mapping>
   <servlet-name>bookdetail-dispatcher</servlet-name>
