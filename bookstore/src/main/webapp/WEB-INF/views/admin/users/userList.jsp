@@ -71,7 +71,7 @@
             <th>Email</th>
             <th>전화번호</th>
             <th>권한</th>
-            <th>관리</th>
+            <th>관리1</th>
           </tr>
         </thead>
         <tbody>
