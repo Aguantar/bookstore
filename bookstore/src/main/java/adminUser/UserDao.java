@@ -1,14 +1,8 @@
 package adminUser;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.sql.*;
+import java.util.*;
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -19,15 +13,16 @@ public class UserDao implements UserDaoInter {
     private DataSource dataSource;
 
     public int insertUser(User user) throws SQLException {
-        String sql = "INSERT INTO users (id, name, password, email, hp, role) " +
-                     "VALUES (seq_users.NEXTVAL, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO users (id, username, name, password, email, hp, role) " +
+                     "VALUES (seq_users.NEXTVAL, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, user.getName());
-            ps.setString(2, user.getPassword());
-            ps.setString(3, user.getEmail());
-            ps.setString(4, user.getHp());
-            ps.setString(5, user.getRole());
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getName());
+            ps.setString(3, user.getPassword());
+            ps.setString(4, user.getEmail());
+            ps.setString(5, user.getHp());
+            ps.setString(6, user.getRole());
             return ps.executeUpdate();
         }
     }
@@ -41,6 +36,7 @@ public class UserDao implements UserDaoInter {
                 if (rs.next()) {
                     User u = new User();
                     u.setId(rs.getLong("id"));
+                    u.setUsername(rs.getString("username"));
                     u.setName(rs.getString("name"));
                     u.setPassword(rs.getString("password"));
                     u.setEmail(rs.getString("email"));
@@ -62,6 +58,7 @@ public class UserDao implements UserDaoInter {
             while (rs.next()) {
                 User u = new User();
                 u.setId(rs.getLong("id"));
+                u.setUsername(rs.getString("username"));
                 u.setName(rs.getString("name"));
                 u.setPassword(rs.getString("password"));
                 u.setEmail(rs.getString("email"));
