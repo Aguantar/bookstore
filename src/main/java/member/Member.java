@@ -1,6 +1,7 @@
 package member;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,9 +13,11 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Member {
-	String username;
-	String password;
-	String email;
-	String role;
-	java.sql.Date regdate;
+	private int id;
+	private String username; 
+	private String password;
+	private String name;
+	private String email;
+	private String hp;
+	private String role;
 }
