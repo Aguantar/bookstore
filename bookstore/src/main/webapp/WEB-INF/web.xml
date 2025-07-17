@@ -94,9 +94,8 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 </servlet>
   <servlet-mapping>
   <servlet-name>booklist-dispatcher</servlet-name>
-  <url-pattern>/bookList</url-pattern>
+  <url-pattern>/bookList/*</url-pattern>
 </servlet-mapping>
-
 <servlet>
   <servlet-name>bookdetail-dispatcher</servlet-name>
   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -106,7 +105,14 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
   </init-param>
   <load-on-startup>4</load-on-startup>
 </servlet>
-<servlet>
+
+<servlet-mapping>
+  <servlet-name>bookdetail-dispatcher</servlet-name>
+  <!-- 상세보기 URL 패턴을 /bookDetail/* 로 바꿔서 충돌 방지 -->
+  <url-pattern>/bookDetail/*</url-pattern>
+</servlet-mapping>
+  
+  <servlet>
     <servlet-name>adminuser</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
@@ -118,15 +124,9 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 
 <servlet-mapping>
     <servlet-name>adminuser</servlet-name>
-    <url-pattern>/admin/*</url-pattern>
+    <url-pattern>/admin/users/*</url-pattern>
 </servlet-mapping>
 
-<servlet-mapping>
-  <servlet-name>bookdetail-dispatcher</servlet-name>
-  <!-- 상세보기 URL 패턴을 /bookDetail/* 로 바꿔서 충돌 방지 -->
-  <url-pattern>/bookDetail/*</url-pattern>
-</servlet-mapping>
-  
 
 <!-- 404에러 발생시 web.xml에 error-page등록 -->
 <error-page>
