@@ -147,7 +147,7 @@
   </a>
 
   <!-- 회원관리 버튼 (주황색) -->
-  <a href="${ctx}/admin/memberManage" class="btn" style="background-color: #fd7e14; color: white; font-weight: 600; font-size: 1rem; border-radius: 20px; padding: 0.5rem 1.5rem;">
+  <a href="${ctx}/admin/users/" class="btn" style="background-color: #fd7e14; color: white; font-weight: 600; font-size: 1rem; border-radius: 20px; padding: 0.5rem 1.5rem;">
     회원관리
   </a>
 </div>

@@ -120,7 +120,20 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
     <servlet-name>adminuser</servlet-name>
     <url-pattern>/admin/*</url-pattern>
 </servlet-mapping>
+<servlet>
+  <servlet-name>adminBookManage-dispatcher</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <init-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/config/adminBookManage-servlet.xml</param-value>
+  </init-param>
+  <load-on-startup>6</load-on-startup>
+</servlet>
 
+<servlet-mapping>
+  <servlet-name>adminBookManage-dispatcher</servlet-name>
+  <url-pattern>/admin/bookManage/*</url-pattern>
+</servlet-mapping>
 <servlet-mapping>
   <servlet-name>bookdetail-dispatcher</servlet-name>
   <!-- 상세보기 URL 패턴을 /bookDetail/* 로 바꿔서 충돌 방지 -->

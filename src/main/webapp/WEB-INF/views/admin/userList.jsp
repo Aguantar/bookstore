@@ -48,10 +48,10 @@
 <body class="container py-4">
   <h1>북마켓 회원 목록</h1>
 
-  <div class="mb-4">
-    <a href="<c:url value='/admin/users/add'/>" class="btn btn-primary">+ 새 사용자 등록</a>
-  </div>
-
+  <div class="mb-4 d-flex justify-content-end gap-2">
+  <a href="<c:url value='/admin/users/add'/>" class="btn btn-primary">+ 새 사용자 등록</a>
+  <a href="<c:url value='/admin/bookManage'/>" class="btn btn-secondary">목록으로 돌아가기</a>
+</div>
   <c:if test="${not empty users}">
     <div class="table-responsive">
       <table class="table table-bordered table-striped text-center align-middle">
