@@ -12,7 +12,9 @@ import lombok.ToString;
 @Setter
 @ToString
 public class RegisterForm {
-	String username;
-	String password;
-	String email;
+	private String username;
+	private String password;
+	private String name;
+	private String email;
+	private String hp;
 }

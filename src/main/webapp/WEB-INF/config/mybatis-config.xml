@@ -32,7 +32,7 @@
 
 <!-- MemberMapper.xml 파일을 스캔하는 역할(객체로 변환) -->
 <!-- MyBatis 매퍼 스캔 -->
-<mybatis-spring:scan base-package="member,bookList,bookDetail"/>
+<mybatis-spring:scan base-package="member,bookList,bookDetai,adminBookManagel"/>
 
 
 </beans>

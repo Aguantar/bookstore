@@ -1,33 +1,48 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!-- security에서는 모든 폼에 토큰이 생성되어야 403에러 발생하지 않음 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<h1>LOGIN</h1>
-<form action="<c:url value='/login'/>" method="post">
-<div>
-<label>아이디</label>
-<input type="text" name="username">
-</div>
-<div>
-<label>비밀번호</label>
-<input type="password" name="password">
-</div>
-<div>
-<input type="submit" value="로그인">
-</div>
-<input type="hidden" 
-name="${_csrf.parameterName}"
-value="${_csrf.token }" />
-</form>
-<a href="/register">회원가입</a>
+<body class="bg-light">
 
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3>로그인</h3>
+                    </div>
+                    <div class="card-body"> 
+                        <form action="<c:url value='/login'/>" method="post">
+                        	<div class="mb-3">
+                                <label for="username" class="form-label">아이디</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="아이디를 입력하세요" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">비밀번호</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">로그인</button>
+                                <a href="/member/register" class="btn btn-secondary">회원가입</a>
+                            </div>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        ⓒ 2025 Your Company
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

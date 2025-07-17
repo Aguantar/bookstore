@@ -10,8 +10,10 @@
 		<config>src/main/webapp/WEB-INF/config/login-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/config/root-context.xml</config>
 		<config>src/main/webapp/WEB-INF/config/booklist-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/config/adminBookManage-servlet.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/config/bookdetail-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/config/member-servlet.xml</config>
 	</autoconfigs>
 	<configSets>
