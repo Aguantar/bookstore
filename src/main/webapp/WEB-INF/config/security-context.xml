@@ -12,7 +12,6 @@ intercept-url을 자바파일에서 처리가능
 -->
 
     <security:http auto-config="true" use-expressions="true">
-          
         <security:form-login 
         login-page="/login/login"  
         default-target-url="/user/index" 
