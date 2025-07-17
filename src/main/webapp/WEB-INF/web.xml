@@ -53,6 +53,37 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
     </filter-mapping>
 
 <!-- 서블릿등록 -->
+
+  <servlet>
+<servlet-name>adminuser</servlet-name>
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+<init-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>/WEB-INF/config/adminuser-servlet.xml</param-value>
+</init-param>
+<load-on-startup>5</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>adminuser</servlet-name>
+<url-pattern>/admin/*</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>adminBookManage-dispatcher</servlet-name>
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+<init-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>/WEB-INF/config/adminBookManage-servlet.xml</param-value>
+</init-param>
+<load-on-startup>6</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>adminBookManage-dispatcher</servlet-name>
+<url-pattern>/admin/bookManage/*</url-pattern>
+</servlet-mapping>
+  
+
 <servlet>
   <servlet-name>login-dispatcher</servlet-name>
   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
