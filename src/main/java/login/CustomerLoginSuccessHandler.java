@@ -29,7 +29,7 @@ public class CustomerLoginSuccessHandler implements AuthenticationSuccessHandler
 		
 		//변환한 문자열을 확인하고 페이지 이동
 		if(roleNames.contains("ADMIN")) {
-			response.sendRedirect("/admin/index"); //pageController에서 모두 처리                                                  
+			response.sendRedirect("/admin/bookManage"); //pageController에서 모두 처리                                                  
 		}else if(roleNames.contains("CUSTOMER")) {
 			response.sendRedirect("/bookList/bookList");
 		}else {

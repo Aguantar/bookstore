@@ -9,10 +9,9 @@
   <h1><a href="${ctx}/bookList">BookShop</a></h1>
   <nav>
     <a href="${ctx}/bookList">전체보기</a>
-    
     <sec:authorize access="isAuthenticated()">
       <a href="#">[<sec:authentication property="name"/>]</a>
-      <form action="/logout" method="post">
+      <form action="/logout" method="post" style="display: inline;">
         <input type="submit" value="로그아웃">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
       </form>
