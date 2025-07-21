@@ -192,139 +192,142 @@ commit;
 
 ########################### 2-1 books 이미지 넣기
 
+
+
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788936439743.jpg'
-WHERE book_id = 3;
+WHERE book_id = 1;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791161571188.jpg'
-WHERE book_id = 4;
+WHERE book_id = 2;
 
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788901272580.jpg'
-WHERE book_id = 5;
+WHERE book_id = 3;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791168473690.jpg'
-WHERE book_id = 6;
+WHERE book_id = 4;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788959897223.jpg'
-WHERE book_id = 7;
+WHERE book_id = 5;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791198517425.jpg'
-WHERE book_id = 8;
+WHERE book_id = 6;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788954695053.jpg'
-WHERE book_id = 9;
+WHERE book_id = 7;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788954699914.jpg'
-WHERE book_id = 10;
+WHERE book_id = 8;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791167742131.jpg'
-WHERE book_id = 11;
+WHERE book_id = 9;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788932473901.jpg'
-WHERE book_id = 12;
+WHERE book_id = 10;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791191056556.jpg'
-WHERE book_id = 13;
+WHERE book_id = 11;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791168340510.jpg'
-WHERE book_id = 14;
+WHERE book_id = 12;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791161571379.jpg'
-WHERE book_id = 15;
+WHERE book_id = 13;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791165341909.jpg'
-WHERE book_id = 16;
+WHERE book_id = 14;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791165343729.jpg'
-WHERE book_id = 17;
+WHERE book_id = 15;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788956605593.jpg'
-WHERE book_id = 18;
+WHERE book_id = 16;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791198363503.jpg'
-WHERE book_id = 19;
+WHERE book_id = 17;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791191114225.jpg'
-WHERE book_id = 20;
+WHERE book_id = 18;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788998441012.jpg'
-WHERE book_id = 21;
+WHERE book_id = 19;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791196394509.jpg'
-WHERE book_id = 22;
+WHERE book_id = 20;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791191824001.jpg'
-WHERE book_id = 23;
+WHERE book_id = 21;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791161571331.jpg'
-WHERE book_id = 24;
+WHERE book_id = 22;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791164136452.jpg'
-WHERE book_id = 25;
+WHERE book_id = 23;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791193401200.jpg'
-WHERE book_id = 26;
+WHERE book_id = 24;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791196617127.jpg'
-WHERE book_id = 27;
+WHERE book_id = 25;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/7070024000208.jpg'
-WHERE book_id = 28;
+WHERE book_id = 26;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791197377150.jpg'
-WHERE book_id = 29;
+WHERE book_id = 27;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791167741165.jpg'
-WHERE book_id = 30;
+WHERE book_id = 28;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791167370280.jpg'
-WHERE book_id = 31;
+WHERE book_id = 29;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791193937310.jpg'
-WHERE book_id = 32;
+WHERE book_id = 30;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/S000213356402.jpg'
-WHERE book_id = 33;
+WHERE book_id = 31;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791187119845.jpg'
-WHERE book_id = 34;
+WHERE book_id = 32;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791191043297.jpg'
-WHERE book_id = 35;
+WHERE book_id = 33;
 
 UPDATE books
 SET cover_image = 'https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791161572062.jpg'
-WHERE book_id = 36;
+WHERE book_id = 34;
+commit;
