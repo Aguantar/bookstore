@@ -129,6 +129,7 @@ body {
         </div>
         <div class="detail-desc-title">설명</div>
         <div class="detail-desc">${book.description}</div>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
         <a href="${ctx}/bookList" class="back-btn d-inline-block">
           ← 목록으로 돌아가기
         </a>

@@ -12,7 +12,10 @@
 		<config>src/main/webapp/WEB-INF/config/booklist-servlet.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/config/bookdetail-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/config/member-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/config/adminBookManage-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/config/adminuser-servlet.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

@@ -16,7 +16,7 @@ bean을 해당 파일에서 등록해줌
 <!-- MyBatis Mapper 인터페이스(=@Mapper) 스캔 -->
 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
   <!-- BookListRepository 인터페이스가 bookList 패키지에 있으므로 -->
-  <property name="basePackage" value="bookList,bookDetail"/>
+  <property name="basePackage" value="bookList,bookDetail,adminBookManage,adminUser"/>
 </bean>
 
 <!-- 두번째 방법: @Service선언을 하지 않고 bean을 생성 -->

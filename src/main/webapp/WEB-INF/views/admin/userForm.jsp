@@ -34,17 +34,25 @@
 						<input type="hidden" name="id" value="${user.id}" />
 					</c:if>
 
-					<!-- 아이디 (name) -->
+					<!-- 사용자 ID (username) -->
 					<div class="mb-3">
-						<label for="name" class="form-label">아이디</label>
+						<label for="username" class="form-label">아이디</label>
 						<c:if test="${user.id == null}">
-							<input type="text" id="name" name="name" class="form-control"
-								placeholder="아이디 입력" autocomplete="off" required />
+							<input type="text" id="username" name="username"
+								class="form-control" placeholder="아이디 입력" autocomplete="off"
+								required />
 						</c:if>
 						<c:if test="${user.id != null}">
 							<input type="text" class="form-control-plaintext" readonly
-								value="${user.name}" />
+								value="${user.username}" />
 						</c:if>
+					</div>
+
+					<!-- 사용자 이름 (name) -->
+					<div class="mb-3">
+						<label for="name" class="form-label">이름</label> <input type="text"
+							id="name" name="name" class="form-control" placeholder="이름 입력"
+							value="${user.name}" autocomplete="off" required />
 					</div>
 
 					<!-- 비밀번호 (등록 시에만) -->
@@ -77,8 +85,9 @@
 						<label for="role" class="form-label">권한</label> <select id="role"
 							name="role" class="form-select" autocomplete="off">
 							<option value="CUSTOMER"
-								${user.role == 'CUSTOMER' ? 'selected' : ''}>CUSTOMER</option>
-							<option value="ADMIN" ${user.role == 'ADMIN' ? 'selected' : ''}>ADMIN</option>
+								${user.role == 'CUSTOMER' ? 'selected' : ''}>일반회원</option>
+							<option value="ADMIN"
+								${user.role == 'ADMIN' ? 'selected' : ''}>관리자</option>
 						</select>
 					</div>
 
@@ -87,7 +96,7 @@
 						<button type="submit" class="btn btn-primary">
 							<i class="bi bi-check-circle me-1"></i> ${user.id == null ? "등록" : "수정"}
 						</button>
-						<a href="<c:url value='/admin/users'/>"
+						<a href="<c:url value='/admin/users/'/>"
 							class="btn btn-outline-secondary"> <i class="bi bi-list me-1"></i>
 							목록으로
 						</a>
