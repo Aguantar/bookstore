@@ -8,9 +8,8 @@
 <header style="padding:10px; background:#f0f0f0;">
   <h1><a href="${ctx}/admin/bookManage">BookShop</a></h1>
   <nav>
-    <a href="${ctx}/admin/bookManage">전체보기</a>
     <sec:authorize access="isAuthenticated()">
-      <a href="#">[<sec:authentication property="name"/>]</a>
+      <sec:authentication property="name"/>
       <form action="/logout" method="post" style="display: inline;">
         <input type="submit" value="로그아웃">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
