@@ -37,7 +37,7 @@ intercept-url을 자바파일에서 처리가능
   		<security:access-denied-handler ref="accessDenied"/>  		
                 
         <security:logout logout-url="/logout" 
-        logout-success-url="/login/login?logout=true" />
+        logout-success-url="/bookList" />
         
         <!-- url page가 없는 경우 오류가 발생하는데 무조건 로그인페이지 이동 -->
        <!-- <security:http-basic entry-point-ref="authenticationEntryPoint" /> -->
