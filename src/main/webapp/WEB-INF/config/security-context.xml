@@ -14,9 +14,10 @@ intercept-url을 자바파일에서 처리가능
 
      <security:http auto-config="true" use-expressions="true">
          <!-- 인증된 사용자만 페이지를 볼 수 있으며 그 외 사용자는 로그인 페이지로 이동 --> 
-        <security:intercept-url pattern="/login/login" access="permitAll"/>
+        <security:intercept-url pattern="/login/**" access="permitAll"/>
         <security:intercept-url pattern="/bookDetail/**" access="permitAll"/>
 		<security:intercept-url pattern="/bookList/**" access="permitAll"/>
+		<security:intercept-url pattern="/member/**" access="permitAll"/>
 		<security:intercept-url pattern="/auth/**" access="permitAll"/>
 		<security:intercept-url pattern="/css/**" access="permitAll"/>
 		<security:intercept-url pattern="/js/**" access="permitAll"/>
