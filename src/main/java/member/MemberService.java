@@ -31,4 +31,10 @@ public class MemberService {
 		mapper.save(member);
 	}
 	
+	public Member findByUserName(String username) {
+        return mapper.findByUserName(username);
+    }
+	
+	
+	
 }

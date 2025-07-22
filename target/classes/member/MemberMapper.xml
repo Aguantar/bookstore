@@ -6,6 +6,6 @@ insert into users (username,password,name,email,hp,role) values(#{username},#{pa
 </insert>
 
 <select id="findByUserName" resultType="member.Member">
-select username,password,role from users where username=#{username}
+select * from users where username=#{username}
 </select>
 </mapper>

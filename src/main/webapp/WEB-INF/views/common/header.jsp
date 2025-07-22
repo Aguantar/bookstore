@@ -11,7 +11,7 @@
    
     
     <sec:authorize access="isAuthenticated()">
-      <sec:authentication property="name"/>
+      <a href="/member/mypage"><sec:authentication property="name"/></a>
       <form action="/logout" method="post" style="display: inline;">
         <input type="submit" value="로그아웃">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
