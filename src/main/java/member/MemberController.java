@@ -31,12 +31,23 @@ public class MemberController {
 	@GetMapping("login/login")
 	public void login() {}
 	
-	 @GetMapping("mypage")
-	    public String mypage(String username,Model model) {
-		 	System.out.println(username);
-		 	Member member = service.findByUserName(username);
-		 	model.addAttribute("member", member);
-	        return "mypage";
-	    }
+	@GetMapping("/mypage")
+    public String mypage(HttpSession session, Model model) {
+
+        // 세션에서 로그인 사용자 확인
+        Member loginUser = (Member) session.getAttribute("loginMember");
+
+        if (loginMember == null) {
+            return "redirect:/login"; // 로그인 안 했을 경우 로그인 페이지로
+        }
+
+        // DB에서 사용자 정보 조회 (세션값으로도 가능하지만 최신화 목적)
+        Member member = service.findByUserName(loginUser.getUsername());
+
+        // JSP로 사용자 정보 전달
+        model.addAttribute("user", Member);
+
+        return "mypage"; // → /WEB-INF/views/mypage.jsp
+    }
 	
 }
