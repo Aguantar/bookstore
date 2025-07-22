@@ -59,10 +59,10 @@
             <div class="col-sm-8">${member.hp}</div>
         </div>
         <div class="text-center mt-4">
-            <a href="/mypage/edit" class="btn btn-primary">회원정보 수정</a>
-            <a href="/logout" class="btn btn-outline-secondary">로그아웃</a>
+            <a href="/member/updateform" class="btn btn-primary">회원정보 수정</a>
+            <a href="/member/delete" class="btn btn-outline-secondary">회원탈퇴</a>
         </div>
-        
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
     </div>
 </div>
 

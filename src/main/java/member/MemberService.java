@@ -34,6 +34,15 @@ public class MemberService {
 	public Member findByUserName(String username) {
         return mapper.findByUserName(username);
     }
+
+	public int update(RegisterForm form) {
+		return mapper.update(form);	
+	}
+
+	public int delete(String username) {
+		return mapper.delete(username);
+		
+	}
 	
 	
 	

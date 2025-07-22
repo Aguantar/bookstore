@@ -8,4 +8,13 @@ insert into users (username,password,name,email,hp,role) values(#{username},#{pa
 <select id="findByUserName" resultType="member.Member">
 select * from users where username=#{username}
 </select>
+
+<update id="update" parameterType="member.Member" >
+update users set password=#{password},name=#{name},email=#{email},hp=#{hp} where username=#{username}
+</update>
+
+<delete id="delete" parameterType="member.Member">
+delete from users where username=#{username}
+</delete>
+
 </mapper>

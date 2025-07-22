@@ -1,7 +1,11 @@
 package member;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,23 +35,43 @@ public class MemberController {
 	@GetMapping("login/login")
 	public void login() {}
 	
-	@GetMapping("/mypage")
-    public String mypage(HttpSession session, Model model) {
+	 @GetMapping("mypage")
+	    public String mypage(Model model, Principal principal) {
+	        // 현재 로그인한 사용자 ID 가져오기
+	        String username = principal.getName(); // 로그인된 사용자의 username
+       
+	        // DB에서 사용자 정보 조회
+	        Member member = service.findByUserName(username);
+	        
+	        // JSP에 전달
+	        model.addAttribute("member", member);
 
-        // 세션에서 로그인 사용자 확인
-        Member loginUser = (Member) session.getAttribute("loginMember");
+	        return "mypage"; 
+	    }
+	 
+	 @GetMapping("updateform")
+	    public String updateform(Model model, Principal principal) {
+	        // 현재 로그인한 사용자 ID 가져오기
+	        String username = principal.getName(); // 로그인된 사용자의 username
+    
+	        // DB에서 사용자 정보 조회
+	        Member member = service.findByUserName(username);
+	        
+	        // JSP에 전달
+	        model.addAttribute("member", member);
 
-        if (loginMember == null) {
-            return "redirect:/login"; // 로그인 안 했을 경우 로그인 페이지로
-        }
-
-        // DB에서 사용자 정보 조회 (세션값으로도 가능하지만 최신화 목적)
-        Member member = service.findByUserName(loginUser.getUsername());
-
-        // JSP로 사용자 정보 전달
-        model.addAttribute("user", Member);
-
-        return "mypage"; // → /WEB-INF/views/mypage.jsp
-    }
+	        return "updateform"; 
+	    }
+	 	@PostMapping("update")
+		public String update(RegisterForm form) {
+			service.update(form);
+			return "redirect:/login/login";
+		}
+	 	@PostMapping("delete")
+		public String delete(Principal principal) {
+	 		String username = principal.getName();
+			service.delete(username);
+			return "redirect:/login/login";
+		}
 	
 }

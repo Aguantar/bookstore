@@ -1,10 +1,15 @@
 package login;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import member.Member;
+import member.MemberService;
 
 @Controller
 /*
@@ -18,6 +23,8 @@ public class LoginController {
 	
 	LoginService service;
 	// http://localhost:8888/login/login
+	
+	
 	@GetMapping("login")
 	public void login(Member member) {
 		//함수가 void형 즉 리턴이 없을 경우 주소를 차몾하여 페이지 결정
@@ -25,8 +32,8 @@ public class LoginController {
 		//만약 url주소가 /login/login -> /WEB-INF/views/login/login.jsp
 		
 	}
-	/*
-	 로그아웃시 get, post 컨트롤러는 필요가 없음
-	 */
+	
+	 //로그아웃시 get, post 컨트롤러는 필요가 없음
+	 
 	
 }
