@@ -67,9 +67,10 @@ public class MemberController {
 			service.update(form);
 			return "redirect:/login/login";
 		}
-	 	@PostMapping("delete")
+	 	@GetMapping("delete")
 		public String delete(Principal principal) {
 	 		String username = principal.getName();
+	 		System.out.println("*+*+*"+username);
 			service.delete(username);
 			return "redirect:/login/login";
 		}
